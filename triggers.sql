@@ -1,0 +1,9 @@
+CREATE LANGUAGE plpgsql;
+CREATE OR REPLACE FUNCTION addPartNo () AS '
+	BEGIN
+		-- Do Something
+	END;
+' LANGUAGE 'plpgsql';
+
+CREATE TRIGGER insertPart BEFORE INSERT ON part_nyc
+	FOR EACHN ROW EXECUTE PROCEDURE  addPartNo();
